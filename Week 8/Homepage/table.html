@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML With Button Editing Section</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Link CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <!-- Main Data Table -->
+        <div class="mainTable">
+            <h1>Template Table</h1>
+            <table id="table" border="1">
+
+                <tr>
+                    <th>Index Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Random Colour</th>
+                </tr>
+
+                <tr>
+                    <td>01</td>
+                    <td>C </td>
+                    <td>F </td>
+                    <td style="background-color:red"></td>
+                </tr>
+
+                <tr>
+                    <td>02</td>
+                    <td>N </td>
+                    <td>L </td>
+                    <td> <img src="blue.png"/ width="200" height="100"></td>
+                </tr>
+
+                <tr>
+                    <td>03</td>
+                    <td>L </td>
+                    <td>O </td>
+                    <td>Green</td>
+                </tr>
+
+                <tr>
+                    <td>04</td>
+                    <td>S  </td>
+                    <td>G </td>
+                    <td>Yellow</td>
+                </tr>
+
+                <tr>
+                    <td>05</td>
+                    <td>K </td>
+                    <td>A</td>
+                    <td>Purple</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <!-- Update Button -->
+        <div class="updateBtn">
+            <button  onclick="editTableDisplay()">Update data</button>
+        </div>
+
+        <!-- Edit table -->
+        <div class="editTable">
+            <div class="left">First Name: </div><div class="right"><input type="text" name="fname" id="fname"></div><br><br>
+            <div class="left">Last Name: </div><div class="right"><input type="text" name="lname" id="lname"></div><br><br>
+            <div class="left">Random Colour: </div><div class="right"><input type="text" name="ff" id="ff"></div><br><br>
+            <button onclick="editRow();" class="editRowBtn">Update</button><br><br>
+        </div>
+
+        <!-- link JavaScript -->
+        <script>var table = document.getElementById("table"),rIndex;
+
+            for(var i = 1; i < table.rows.length; i++){
+                table.rows[i].onclick = function(){
+                    rIndex = this.rowIndex;
+                    console.log(rIndex);
+
+                    document.getElementById("fname").value = this.cells[1].innerHTML;
+                    document.getElementById("lname").value = this.cells[2].innerHTML;
+                    document.getElementById("ff").value = this.cells[3].innerHTML;
+                };
+            }
+
+            // edit the row
+            function editRow(){
+                table.rows[rIndex].cells[1].innerHTML = document.getElementById("fname").value;
+                table.rows[rIndex].cells[2].innerHTML = document.getElementById("lname").value;
+                table.rows[rIndex].cells[3].innerHTML = document.getElementById("ff").value;
+            }
+
+            // Data Update Table Here
+            function editTableDisplay(){
+                document.querySelector('.editTable').setAttribute('style', 'display: block;')
+            }
+            </script>
+      <a href="chart.html">Link to Chart </a>
+      <a href="index.html">Link to Homepage </a>
+    </body>
+</html>
