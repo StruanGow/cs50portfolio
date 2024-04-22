@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Why did the chicken cross the road?</h3>
+                <p id="status"></p>
+                <button id="incorrect">To find a door</button>
+                <button id="correct">To get to the other side</button>
+                <button id="incorrect">It was hungry</button>
+                <script>
+                    let correct = document.querySelector('#correct');
+                    let incorrect = document.querySelector('#status');
+                    let status = document.querySelector('#status');
+                    correct.onclick = function() {
+                        correct.style.backgroundColor = 'green';
+                        status.innerHTML = "Correct!";
+                    }
+                    for (let i = 0; i < incorrect.length; i++) {
+                        incorrect[i].onclick = function() {
+                            incorrect[i].style.backgroundColor = 'red';
+                            status.innerHTML = "Incorrect!";
+                        };
+                    }
+                </script>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h2>What is my favourite colour?</h2>
+                <p id="status2"></p>
+                <form>
+                    <input type="text" id="value">
+                    <button>Check Answer</button>
+                    <script>
+                        document.addEventListener('submit', function(){
+                            let status2 = document.querySelector('#status2');
+                            let value = document.querySelector('#value');
+
+                            if (value.value == 'Blue' || value.value == 'blue' || value.value == 'BLUE') {
+                                value.style.backgroundColor = 'green';
+                                status2.innerHTML = 'Correct!';
+                            }
+                            else {
+                                value.style.backgroundColor = 'red';
+                                status2.innerHTML = 'Incorrect!';
+                            }
+                        });
+                    </script>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
