@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Online Calculator</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" disabled>
+    <p></p><p></p><p></p>
+    <button onclick="clearResult()">C</button>
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button onclick="appendValue('+')">+</button>
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button onclick="appendValue('-')">-</button>
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button onclick="appendValue('*')">*</button>
+    <button onclick="appendValue('.')">.</button>
+    <button onclick="appendValue('0')">0</button>
+    <button onclick="appendValue('/')">/</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="appendValue('(')">(</button>
+    <button onclick="appendValue(')')">)</button>
+    <button onclick="calculateIndices()">^</button>
+    <button onclick="deleteCharacter()">DEL</button>
+    <button onclick="calculateSin()">sin</button>
+    <button onclick="calculateCos()">cos</button>
+    <button onclick="calculateTan()">tan</button>
+    <button onclick="calculateSqrt()">√</button>
+    <button onclick="calculateExponential()">^e</button>
+    <p></p><p></p>
+    <button onclick="toggleTheme()">Theme</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
